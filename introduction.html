@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lake Surface Water Temperature</title>
+  <link rel="stylesheet" href="style2.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="header-top">
+      <img src="static/logo.png" alt="Logo" class="logo" />
+      <input type="text" placeholder="Tìm kiếm..." class="search-box" />
+    </div>
+    <nav class="navbar" style="padding-top:10px;">
+      <ul>
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="introduction.html">Giới thiệu</a></li>
+        <li><a href="#">Phương pháp</a></li>
+        <li><a href="#">Dữ liệu</a></li>
+        <li><a href="#">Báo cáo</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<section id="about">
+    <div class="about-intro">
+      <h1>Chào mừng bạn đến với trang web!</h1>
+      <p>
+        Biến đổi khí hậu và các hoạt động của con người đang ngày càng ảnh hưởng mạnh mẽ đến hệ sinh thái nước ngọt. Trong đó, nhiệt độ nước mặt hồ là một chỉ số quan trọng phản ánh sự thay đổi môi trường và có liên quan mật thiết đến chất lượng nước, đa dạng sinh học, và cân bằng hệ sinh thái.
+      </p>
+      <p>
+        Dự án này tập trung phân tích sự biến động nhiệt độ mặt nước của các hồ tiêu biểu tại miền Bắc Việt Nam, như Hồ Tây, Ba Bể, Thác Bà và Hòa Bình trong giai đoạn 2014–2024. Chúng tôi sử dụng dữ liệu viễn thám Landsat 8 và 9, kết hợp với dữ liệu khí tượng và các yếu tố môi trường khác để:
+      </p>
+      <ul>
+        <li>Phân tích xu hướng biến đổi nhiệt độ nước mặt hồ trong giai đoạn 2014 - 2024 dựa trên dữ liệu ảnh Landsat 8, 9.</li>
+        <li>So sánh sự khác biệt về nhiệt độ mặt nước hồ giữa các hồ nghiên cứu ở cùng thời điểm đo.</li>
+        <li>Đánh giá tác động của các yếu tố môi trường đến sự thay đổi nhiệt độ nước mặt hồ.</li>
+      </ul>
+      <p>
+        Trang web là nơi cung cấp kết quả nghiên cứu, bản đồ trực quan, biểu đồ phân tích, cũng như tài liệu tham khảo và công cụ tra cứu dữ liệu. Chúng tôi hy vọng đây sẽ là nguồn thông tin hữu ích cho các nhà nghiên cứu, nhà quản lý môi trường và cộng đồng quan tâm đến tài nguyên nước.
+      </p>
+    </div>
+  
+    <div class="slider-container">
+      <div class="slider">
+        <img id="slider-img" src="static/slider1.png" alt="Slider Image">
+        <div class="prev" onclick="changeImage(-1)">&#10094;</div>
+        <div class="next" onclick="changeImage(1)">&#10095;</div>
+        <div class="dots-container">
+          <span class="dot" onclick="currentSlide(0)"></span>
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+      </div>
+    </div>
+
+</section>
+  
+  
+  <!-- FOOTER -->
+  <footer>
+    <h3>Thông Tin Liên Hệ</h3>
+    <p>Email: tranthibichhang_t67@hus.edu.vn</p>
+    <p>Hotline: +84 865 059 770</p>
+  </footer>
+
+  <script src="script2.js"></script>
+</body>
+</html>
