@@ -193,7 +193,7 @@ header {
   .slider {
     position: relative;
     width: 100%;
-    height: 400px;  /* Kích thước ảnh slider */
+    /* height: 100vh;  Kích thước ảnh slider */
     overflow: hidden;
     border-radius: 10px;
   }
@@ -201,7 +201,7 @@ header {
   .slider img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
   
   .prev, .next {
