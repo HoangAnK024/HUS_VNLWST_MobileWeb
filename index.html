@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lake Surface Water Temperature</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="header-top">
+      <img src="static/logo.png" alt="Logo" class="logo" />
+      <input type="text" placeholder="Tìm kiếm..." class="search-box" />
+    </div>
+    <nav class="navbar" style="padding-top:10px;">
+      <ul>
+        <li><a href="#">Trang chủ</a></li>
+        <li><a href="#">Giới thiệu</a></li>
+        <li><a href="#">Phương pháp</a></li>
+        <li><a href="#">Dữ liệu</a></li>
+        <li><a href="#">Báo cáo</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<!-- SLIDER -->
+<section class="slider">
+    <div class="slider-container">
+      <img src="static/slider1.png" alt="Slider" id="slider-img" class="slider-image" />
+      <div class="slider-buttons">
+        <button class="prev-btn" onclick="changeImage(-1)">&#10094;</button>
+        <button class="next-btn" onclick="changeImage(1)">&#10095;</button>
+      </div>
+      <div class="slider-dots">
+        <span class="dot" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+      </div>
+    </div>
+</section>
+  
+
+  <!-- TÍNH CẤP THIẾT -->
+  <section class="urgency">
+    <h1>TÍNH CẤP THIẾT</h1>
+    <img src="static/urgency.png" alt="Urgency" />
+    <div>
+      <h2>Tại sao cần theo dõi nhiệt độ bề mặt hồ?</h2>
+      <p>
+        Trong bối cảnh biến đổi khí hậu ngày càng phức tạp và tác động rõ rệt đến các hệ sinh thái nước ngọt, việc nghiên cứu sự biến đổi nhiệt độ nước mặt hồ không chỉ mang giá trị khoa học mà còn đóng vai trò then chốt trong quản lý và bảo vệ tài nguyên nước nội địa. Nhiệt độ nước mặt là một chỉ số nhạy cảm, phản ánh trực tiếp ảnh hưởng tổng hợp của các yếu tố môi trường như khí hậu, nhân sinh, và đặc điểm hình thái của từng hồ. Sự thay đổi của thông số này có thể kéo theo những hệ quả sâu rộng đến chất lượng nước, hệ sinh thái thủy sinh, cũng như cân bằng sinh học của cả khu vực.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <h3>Thông Tin Liên Hệ</h3>
+    <p>Email: tranthibichhang_t67@hus.edu.vn</p>
+    <p>Hotline: +84 865 059 770</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
