@@ -33,34 +33,14 @@
     </nav>
   </header>
 
-<!-- SLIDER -->
-<section class="slider">
-    <div class="slider-container">
-      <img src="static/slider1.png" alt="Slider" id="slider-img" class="slider-image" />
-      <div class="slider-buttons">
-        <button class="prev-btn" onclick="changeImage(-1)">&#10094;</button>
-        <button class="next-btn" onclick="changeImage(1)">&#10095;</button>
-      </div>
-      <div class="slider-dots">
-        <span class="dot" onclick="currentSlide(0)"></span>
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-      </div>
-    </div>
-</section>
-  
+<!-- main content Hồ Hòa Bình -->
+ <div class="title">DỮ LIỆU HỒ HÒA BÌNH</div>
 
-  <!-- TÍNH CẤP THIẾT -->
-  <section class="urgency">
-    <h1>TÍNH CẤP THIẾT</h1>
-    <img src="static/urgency.png" alt="Urgency" />
-    <div>
-      <h2>Tại sao cần theo dõi nhiệt độ bề mặt hồ?</h2>
-      <p>
-        Trong bối cảnh biến đổi khí hậu ngày càng phức tạp và tác động rõ rệt đến các hệ sinh thái nước ngọt, việc nghiên cứu sự biến đổi nhiệt độ nước mặt hồ không chỉ mang giá trị khoa học mà còn đóng vai trò then chốt trong quản lý và bảo vệ tài nguyên nước nội địa. Nhiệt độ nước mặt là một chỉ số nhạy cảm, phản ánh trực tiếp ảnh hưởng tổng hợp của các yếu tố môi trường như khí hậu, nhân sinh, và đặc điểm hình thái của từng hồ. Sự thay đổi của thông số này có thể kéo theo những hệ quả sâu rộng đến chất lượng nước, hệ sinh thái thủy sinh, cũng như cân bằng sinh học của cả khu vực.
-      </p>
-    </div>
-  </section>
+ <div class="image-container">
+    <img src="static/hotay.png" alt="hồ tây img lswt">
+ </div>
+
+ <div class="description"> Hình ảnh mô tả nhiệt độ mặt nước (LSWT) của Hồ Tây được thu thập từ dữ liệu vệ tinh và được xử lý bằng phương pháp XXX. </div>
 
   <!-- FOOTER -->
   <footer>
@@ -89,6 +69,42 @@
     });
   </script>
 
-  
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: bold;
+      color: #007B5E;
+      margin: 30px;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .description {
+      margin-top: 25px;
+      padding: 20px;
+      background-color: #dfd8d88f;
+      border: 3px solid #007B5E;
+      border-radius: 8px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 16px;
+      text-align: justify;
+    }
+  </style>
+
+
 </body>
 </html>

@@ -18,7 +18,15 @@
         <li><a href="index.html">Trang chủ</a></li>
         <li><a href="introduction.html">Giới thiệu</a></li>
         <li><a href="#">Phương pháp</a></li>
-        <li><a href="#">Dữ liệu</a></li>
+        <li class="has-subnav">
+          <a href="#" class="toggle-subnav">Dữ liệu <span class="arrow">&#9662;</span></a>
+          <ul class="subnav">
+            <li><a href="hotay.html">Hồ Tây</a></li>
+            <li><a href="thacba.html">Hồ Thác Bà</a></li>
+            <li><a href="hoabinh.html">Hồ Hòa Bình</a></li>
+            <li><a href="babe.html">Hồ Ba Bể</a></li>
+          </ul>
+        </li>   
         <li><a href="#">Báo cáo</a></li>
       </ul>
     </nav>
@@ -67,5 +75,24 @@
   </footer>
 
   <script src="script2.js"></script>
+
+    <!-- sub nav Dữ liệu -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const toggleSubnav = document.querySelector('.toggle-subnav');
+        const parentLi = toggleSubnav.closest('.has-subnav');
+  
+        toggleSubnav.addEventListener('click', function (e) {
+          e.preventDefault();
+          parentLi.classList.toggle('active');
+        });
+  
+        document.addEventListener('click', function (e) {
+          if (!parentLi.contains(e.target)) {
+            parentLi.classList.remove('active');
+          }
+        });
+      });
+    </script>
 </body>
 </html>

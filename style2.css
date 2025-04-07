@@ -72,6 +72,61 @@ header {
     text-decoration: none; /* Xóa gạch chân khi hover */
 }
 
+/* Subnav styles */
+.has-subnav {
+  position: relative;
+}
+
+.subnav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #5cc265;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 999;
+  width: max-content;
+}
+
+/* Đảm bảo subnav ẩn mặc định */
+.navbar .has-subnav .subnav {
+  display: none !important;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #2d8435;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 999;
+  width: max-content;
+}
+
+/* Khi có class active, hiển thị subnav */
+.navbar .has-subnav.active .subnav {
+  display: block !important;
+}
+
+
+.subnav li {
+  margin: 5px 0;
+}
+
+.subnav a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+}
+
+.subnav a:hover {
+  background-color: #4cad55;
+  border-radius: 4px;
+  padding: 2px 5px;
+}
+ 
+
+
 /* SLIDER */
 .slider {
     width: 100%;
