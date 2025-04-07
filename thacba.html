@@ -5,13 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lake Surface Water Temperature</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
   <!-- HEADER -->
   <header>
     <div class="header-top">
-      <img src="static/logo.png" alt="Logo" class="logo" />
-      <input type="text" placeholder="Tìm kiếm..." class="search-box" />
+      <a href="index.html" class="logo">
+        <img src="static/logo.png" alt="Logo" class="logo" />
+      </a>
+      
+      <div class="search-container">
+        <input type="text" placeholder="Tìm kiếm..." class="search-box" id="search-box" />
+        <button class="search-button" id="search-button">
+          <i class="fa fa-search"></i>
+        </button>
+        <ul class="suggestions" id="suggestions-list"></ul>
+      </div>
+      
     </div>
     <nav class="navbar" style="padding-top:10px;">
       <ul>
@@ -68,6 +79,78 @@
       });
     });
   </script>
+
+<script>
+  const suggestions = [
+    { name: "Phương pháp", link: "method.html" },
+    { name: "Hồ Tây", link: "hotay.html" },
+    { name: "Hồ Ba Bể", link: "babe.html" },
+    { name: "Hồ Hòa Bình", link: "hoabinh.html" },
+    { name: "Hồ Thác Bà", link: "thacba.html" },
+  ];
+
+  const searchBox = document.getElementById("search-box");
+  const suggestionsList = document.getElementById("suggestions-list");
+  const searchButton = document.getElementById("search-button");
+
+  function handleSearch() {
+    const input = searchBox.value.trim().toLowerCase();
+    const matched = suggestions.find(item => item.name.toLowerCase() === input);
+
+    if (matched) {
+      window.location.href = matched.link;
+    } else {
+      alert("Không tìm thấy kết quả phù hợp.");
+    }
+  }
+
+  searchBox.addEventListener("input", function () {
+    const value = this.value.toLowerCase();
+    suggestionsList.innerHTML = "";
+
+    if (value === "") {
+      suggestionsList.style.display = "none";
+      return;
+    }
+
+    const filtered = suggestions.filter(item =>
+      item.name.toLowerCase().includes(value)
+    );
+
+    if (filtered.length === 0) {
+      suggestionsList.style.display = "none";
+      return;
+    }
+
+    filtered.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item.name;
+      li.addEventListener("click", () => {
+        window.location.href = item.link;
+      });
+      suggestionsList.appendChild(li);
+    });
+
+    suggestionsList.style.display = "block";
+  });
+
+  // Enter để tìm
+  searchBox.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  });
+
+  // Nút tìm kiếm
+  searchButton.addEventListener("click", handleSearch);
+
+  // Ẩn gợi ý khi click ra ngoài
+  document.addEventListener("click", (e) => {
+    if (!document.querySelector(".search-container").contains(e.target)) {
+      suggestionsList.style.display = "none";
+    }
+  });
+</script>
 
 <style>
     body {

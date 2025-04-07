@@ -31,13 +31,62 @@ header {
     margin: 0 auto;
 }
 
+.search-container {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+}
+
 .search-box {
-    padding: 10px 15px;
-    font-size: 16px;
-    border: 1px solid #cce6cc; /* Màu pastel xanh lá cho đường viền */
-    border-radius: 6px;
-    width: 100%;
-    max-width: 350px;
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #aaa;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-right: none;
+  font-size: 14px;
+}
+
+.search-button {
+  padding: 8px 12px;
+  border: 1px solid #aaa;
+  border-left: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.search-button i {
+  color: #555;
+  font-size: 16px;
+}
+
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  list-style: none;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 10;
+  padding: 0;
+  margin: 0;
+  display: none;
+}
+
+.suggestions li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.suggestions li:hover {
+  background-color: #f0f0f0;
 }
 
 .navbar ul {
@@ -344,7 +393,10 @@ footer h3 {
         margin-top: 10px;
         width: 100%;
     }
-
+    .search-button {
+      margin-top:10px;
+    }
+      
     .navbar ul {
         flex-direction: column;
         align-items: center;
