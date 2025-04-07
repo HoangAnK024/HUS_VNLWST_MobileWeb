@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lake Surface Water Temperature</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="header-top">
+      <img src="static/logo.png" alt="Logo" class="logo" />
+      <input type="text" placeholder="Tìm kiếm..." class="search-box" />
+    </div>
+    <nav class="navbar" style="padding-top:10px;">
+      <ul>
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="introduction.html">Giới thiệu</a></li>
+        <li><a href="method.html">Phương pháp</a></li>
+
+        <li class="has-subnav">
+          <a href="#" class="toggle-subnav">Dữ liệu <span class="arrow">&#9662;</span></a>
+          <ul class="subnav">
+            <li><a href="hotay.html">Hồ Tây</a></li>
+            <li><a href="thacba.html">Hồ Thác Bà</a></li>
+            <li><a href="hoabinh.html">Hồ Hòa Bình</a></li>
+            <li><a href="babe.html">Hồ Ba Bể</a></li>
+          </ul>
+        </li>             
+        <li><a href="report.html">Báo cáo</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- main content for method-->
+     <!-- 3 ảnh đầu hàng ngang -->
+     <h1 style="text-align: center; color: #03a72c; margin: 20px 0;">
+        Tổng quan phương pháp tính nhiệt độ bề mặt nước
+      </h1>    
+  <div class="image-row">
+    <img src="static/phuongphap1.png" alt="Ảnh 1">
+    <img src="static/phuongphap2.png" alt="Ảnh 2">
+    <img src="static/phuongphap3.png" alt="Ảnh 3">
+  </div>
+
+    <!-- Bước 1 -->
+    <div class="step">
+        <h2>Bước 1: Chuyển đổi sang bức xạ đỉnh khí quyển (TOA Radiance)</h2>
+        <img src="static/step1.png" alt="Minh họa Bước 1">
+        <p>Sử dụng hệ số hiệu chỉnh bức xạ, các giá trị số kỹ thuật số (DN) trong dải hồng ngoại nhiệt có thể được chuyển đổi thành bức xạ phổ TOA.</p>
+        <pre>LA = ML * Qcal + AL - O
+Lλ = 0.0003342 * Band10 + 0.10000 - 0.29</pre>
+        <ul>
+          <li>LA = Bức xạ phổ TOA (Watts/(m²·sr·µm))</li>
+          <li>ML = Hệ số nhân bức xạ của dải (số)</li>
+          <li>AL = Hệ số cộng bức xạ của dải (số)</li>
+          <li>Qcal = Giá trị điểm ảnh sản phẩm tiêu chuẩn đã được lượng tử hóa và hiệu chỉnh (DN)</li>
+          <li>O = Giá trị hiệu chỉnh cho dải 10 là 0.29</li>
+        </ul>
+      </div>
+
+        <!-- Bước 2 -->
+  <div class="step">
+    <h2>Bước 2: Chuyển đổi sang Nhiệt độ bức xạ đỉnh khí quyển (TOA Brightness Temperature - BT)</h2>
+    <img src="static/step2.png" alt="Minh họa Bước 2">
+    <p>Dữ liệu bức xạ phổ có thể được chuyển đổi thành nhiệt độ bức xạ đỉnh khí quyển bằng cách sử dụng các hằng số nhiệt (thermal constants) có trong tệp siêu dữ liệu (metadata).</p>
+    <pre>BT = K2 / ln(K1 / Lλ + 1) - 273.15
+Hoặc:
+BT = (1321.0789 / ln(774.8853 / ToA + 1)) - 273.15</pre>
+    <ul>
+      <li>BT = Nhiệt độ bức xạ đỉnh khí quyển (°C)</li>
+      <li>Lλ = Bức xạ phổ TOA (Watts/(m²·sr·µm))</li>
+      <li>K1, K2 = Hằng số nhiệt K1, K2 của dải (số)</li>
+    </ul>
+  </div>
+
+  <!-- Bước 3 -->
+  <div class="step">
+    <h2>Bước 3: Chỉ số Thực vật Chuẩn hóa (NDVI)</h2>
+    <img src="static/step3.png" alt="Minh họa Bước 3">
+    <p>Chỉ số thực vật chuẩn hóa NDVI (Normalized Difference Vegetation Index) là một chỉ số được tiêu chuẩn hóa để đánh giá độ phủ thực vật, được tính toán từ hai dải phổ: hồng ngoại gần (Near Infrared - Band 5) và đỏ (Red - Band 4).</p>
+    <pre>NDVI = (Band 5 - Band 4) / (Band 5 + Band 4)</pre>
+    <ul>
+      <li>RED = Giá trị số DN từ dải đỏ (Band 4)</li>
+      <li>NIR = Giá trị số DN từ dải hồng ngoại gần (Band 5)</li>
+    </ul>
+  </div>
+
+  <!-- Bước 4 -->
+  <div class="step">
+    <h2>Bước 4: Suất phát xạ bề mặt đất (LSE)</h2>
+    <img src="static/step4.png" alt="Minh họa Bước 4">
+    <p>Suất phát xạ bề mặt đất (LSE) là giá trị trung bình thể hiện khả năng phát xạ nhiệt của một khu vực bề mặt Trái Đất, được tính dựa trên giá trị NDVI.</p>
+    <pre>PV = ((NDVI - NDVI_min) / (NDVI_max - NDVI_min))²
+E = 0.004 * PV + 0.986</pre>
+    <ul>
+      <li>PV = Tỷ lệ phủ thực vật</li>
+      <li>NDVI = Giá trị DN từ ảnh NDVI</li>
+      <li>NDVI_min = Giá trị DN nhỏ nhất trong ảnh NDVI</li>
+      <li>NDVI_max = Giá trị DN lớn nhất trong ảnh NDVI</li>
+    </ul>
+    <p style ="margin-top: 10px;">Sau khi tính được PV, ta tính suất phát xạ như sau:</p>
+    <pre>E = 0.004 * PV + 0.986</pre>
+    <ul>
+        <li>E = Suất phát xạ bề mặt đất (LSE)</li>
+    </ul>
+  </div>
+
+  <!-- Bước 5 -->
+  <div class="step">
+    <h2>Bước 5: Nhiệt độ bề mặt đất (Land Surface Temperature - LST)</h2>
+    <img src="static/step5.png" alt="Minh họa Bước 5">
+    <p>Nhiệt độ bề mặt đất (LST) là nhiệt độ bức xạ được tính toán từ nhiệt độ bức xạ đỉnh khí quyển, bước sóng của bức xạ phát ra và suất phát xạ bề mặt đất.</p>
+    <pre>LST = BT / (1 + (λ * BT / c2) * ln(E))</pre>
+    <ul>
+      <li>LST = Nhiệt độ bề mặt đất</li>
+      <li>BT = Nhiệt độ đỉnh khí quyển</li>
+      <li>λ = Bước sóng: 10.8 µm (Band 10), 12.0 µm (Band 11)</li>
+      <li>E = Suất phát xạ</li>
+      <li><pre>c2 = (h * c) / s = 1.4388 × 10² m·K = 14388 µm·K</pre></li>
+      <ul style = "margin-top: 0px;">
+        <li>h = Hằng số Planck = 6.626 × 10⁻³⁴ J·s</li>
+        <li>s = Hằng số Boltzmann = 1.38 × 10⁻²³ J/K</li>
+        <li>c = Vận tốc ánh sáng = 2.998 × 10⁸ m/s</li>
+      </ul>
+    </ul>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <h3>Thông Tin Liên Hệ</h3>
+    <p>Email: tranthibichhang_t67@hus.edu.vn</p>
+    <p>Hotline: +84 865 059 770</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <!-- sub nav Dữ liệu -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggleSubnav = document.querySelector('.toggle-subnav');
+      const parentLi = toggleSubnav.closest('.has-subnav');
+
+      toggleSubnav.addEventListener('click', function (e) {
+        e.preventDefault();
+        parentLi.classList.toggle('active');
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!parentLi.contains(e.target)) {
+          parentLi.classList.remove('active');
+        }
+      });
+    });
+  </script>
+
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f8f9fa;
+    }
+
+    .image-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+
+    .image-row img {
+      width: 32%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .step {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+
+    .step h2 {
+      color: #0056b3;
+      margin-bottom: 15px;
+    }
+
+    .step img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .step pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    .step ul {
+      margin: 10px 0 0 20px;
+    }
+  </style>  
+
+
+</body>
+</html>
