@@ -1,192 +1,235 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lake Surface Water Temperature</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-</head>
-<body>
-  <!-- HEADER -->
-  <header>
-    <div class="header-top">
-      <a href="index.html" class="logo">
-        <img src="static/logo.png" alt="Logo" class="logo" />
-      </a>
-      <div class="search-container">
-        <input type="text" placeholder="Tìm kiếm..." class="search-box" id="search-box" />
-        <button class="search-button" id="search-button">
-          <i class="fa fa-search"></i>
-        </button>
-        <ul class="suggestions" id="suggestions-list"></ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lake Surface Water Temperature</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="header-top">
+        <a href="index.html" class="logo">
+          <img src="static/logo.png" alt="Logo" class="logo" />
+        </a>
+        <div class="search-container">
+          <input
+            type="text"
+            placeholder="Tìm kiếm..."
+            class="search-box"
+            id="search-box"
+          />
+          <button class="search-button" id="search-button">
+            <i class="fa fa-search"></i>
+          </button>
+          <ul class="suggestions" id="suggestions-list"></ul>
+        </div>
       </div>
-      
+      <nav class="navbar" style="padding-top: 10px">
+        <ul>
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="introduction.html">Giới thiệu</a></li>
+          <li><a href="method.html">Phương pháp</a></li>
+
+          <li class="has-subnav">
+            <a href="#" class="toggle-subnav"
+              >Dữ liệu <span class="arrow">&#9662;</span></a
+            >
+            <ul class="subnav">
+              <li><a href="hotay.html">Hồ Tây</a></li>
+              <li><a href="thacba.html">Hồ Thác Bà</a></li>
+              <li><a href="hoabinh.html">Hồ Hòa Bình</a></li>
+              <li><a href="babe.html">Hồ Ba Bể</a></li>
+            </ul>
+          </li>
+          <li><a href="report.html">Báo cáo</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- main content Hồ Ba Bể -->
+    <div class="title">DỮ LIỆU HỒ BA BỂ</div>
+
+    <div class="image-container">
+      <img src="static/babe.png" alt="ba bể img lswt" />
     </div>
-    <nav class="navbar" style="padding-top:10px;">
+
+    <div class="description">
+      <h3 style="margin-bottom: 10px">
+        📊 Nhận xét nổi bật về xu hướng nhiệt độ mặt nước Hồ Ba Bể
+      </h3>
       <ul>
-        <li><a href="index.html">Trang chủ</a></li>
-        <li><a href="introduction.html">Giới thiệu</a></li>
-        <li><a href="method.html">Phương pháp</a></li>
-
-        <li class="has-subnav">
-          <a href="#" class="toggle-subnav">Dữ liệu <span class="arrow">&#9662;</span></a>
-          <ul class="subnav">
-            <li><a href="hotay.html">Hồ Tây</a></li>
-            <li><a href="thacba.html">Hồ Thác Bà</a></li>
-            <li><a href="hoabinh.html">Hồ Hòa Bình</a></li>
-            <li><a href="babe.html">Hồ Ba Bể</a></li>
-          </ul>
-        </li>             
-        <li><a href="report.html">Báo cáo</a></li>
+        <li>
+          Năm 2024: Tháng 8 và tháng 9 ghi nhận mức nhiệt cao nhất, với gần như
+          toàn bộ khu vực hồ nằm trong dải nhiệt 24–27°C (màu đỏ) – đây là mức
+          nhiệt cao nhất trong chuỗi năm được quan sát. Đến tháng 10, nhiệt độ
+          giảm rõ rệt, chủ yếu trong khoảng 20–22°C (màu vàng) và một phần nhỏ
+          chuyển sang 18–20°C (xanh lá).
+        </li>
+        <li>
+          Năm 2023: Nhiệt độ ổn định hơn với sắc xanh lá và vàng (18–22°C) chiếm
+          ưu thế trong suốt cả 3 tháng. Không có vùng nhiệt quá cao (trên 24°C),
+          cho thấy đây là năm thời tiết dịu hơn đáng kể.
+        </li>
+        <li>
+          Năm 2022: Có sự phân bố nhiệt không đồng đều vào tháng 8 với vùng phía
+          Nam hồ đạt đến 24–27°C, trong khi phía Bắc lại xuất hiện vùng nước
+          lạnh 15–18°C (màu xanh dương). Từ tháng 9 đến tháng 10, hồ dần chuyển
+          sang màu xanh ngọc (18–20°C), phản ánh sự chuyển mùa rõ nét.
+        </li>
+        <li>
+          Năm 2021: Tháng 8 xuất hiện nhiều vùng đỏ và vàng – nhiệt độ cao tập
+          trung ở khu vực trung và hạ lưu. Sang tháng 10, nhiệt độ giảm mạnh,
+          tập trung ở mức 18–20°C, phản ánh chu kỳ hạ nhiệt quen thuộc.
+        </li>
+        <li>
+          Năm 2020: Là năm có nền nhiệt thấp nhất trong chuỗi 5 năm. Trong cả 3
+          tháng, hồ chủ yếu mang sắc xanh lá và xanh lam (15–20°C) – cho thấy
+          thời tiết mát mẻ và ổn định hơn nhiều so với các năm khác.
+        </li>
       </ul>
-    </nav>
-  </header>
+    </div>
 
-<!-- main content Hồ Ba Bể -->
- <div class="title">DỮ LIỆU HỒ BA BỂ</div>
+    <!-- FOOTER -->
+    <footer>
+      <h3>Thông Tin Liên Hệ</h3>
+      <p>Email: tranthibichhang_t67@hus.edu.vn</p>
+      <p>Hotline: +84 865 059 770</p>
+    </footer>
 
- <div class="image-container">
-    <img src="static/babe.png" alt="ba bể img lswt">
- </div>
+    <script src="script.js"></script>
+    <!-- sub nav Dữ liệu -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggleSubnav = document.querySelector(".toggle-subnav");
+        const parentLi = toggleSubnav.closest(".has-subnav");
 
- <div class="description"> Hình ảnh mô tả nhiệt độ mặt nước (LSWT) của Hồ Tây được thu thập từ dữ liệu vệ tinh và được xử lý bằng phương pháp XXX. </div>
+        toggleSubnav.addEventListener("click", function (e) {
+          e.preventDefault();
+          parentLi.classList.toggle("active");
+        });
 
-  <!-- FOOTER -->
-  <footer>
-    <h3>Thông Tin Liên Hệ</h3>
-    <p>Email: tranthibichhang_t67@hus.edu.vn</p>
-    <p>Hotline: +84 865 059 770</p>
-  </footer>
+        document.addEventListener("click", function (e) {
+          if (!parentLi.contains(e.target)) {
+            parentLi.classList.remove("active");
+          }
+        });
+      });
+    </script>
 
-  <script src="script.js"></script>
-  <!-- sub nav Dữ liệu -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const toggleSubnav = document.querySelector('.toggle-subnav');
-      const parentLi = toggleSubnav.closest('.has-subnav');
+    <script>
+      const suggestions = [
+        { name: "Phương pháp", link: "method.html" },
+        { name: "Hồ Tây", link: "hotay.html" },
+        { name: "Hồ Ba Bể", link: "babe.html" },
+        { name: "Hồ Hòa Bình", link: "hoabinh.html" },
+        { name: "Hồ Thác Bà", link: "thacba.html" },
+      ];
 
-      toggleSubnav.addEventListener('click', function (e) {
-        e.preventDefault();
-        parentLi.classList.toggle('active');
+      const searchBox = document.getElementById("search-box");
+      const suggestionsList = document.getElementById("suggestions-list");
+      const searchButton = document.getElementById("search-button");
+
+      function handleSearch() {
+        const input = searchBox.value.trim().toLowerCase();
+        const matched = suggestions.find(
+          (item) => item.name.toLowerCase() === input
+        );
+
+        if (matched) {
+          window.location.href = matched.link;
+        } else {
+          alert("Không tìm thấy kết quả phù hợp.");
+        }
+      }
+
+      searchBox.addEventListener("input", function () {
+        const value = this.value.toLowerCase();
+        suggestionsList.innerHTML = "";
+
+        if (value === "") {
+          suggestionsList.style.display = "none";
+          return;
+        }
+
+        const filtered = suggestions.filter((item) =>
+          item.name.toLowerCase().includes(value)
+        );
+
+        if (filtered.length === 0) {
+          suggestionsList.style.display = "none";
+          return;
+        }
+
+        filtered.forEach((item) => {
+          const li = document.createElement("li");
+          li.textContent = item.name;
+          li.addEventListener("click", () => {
+            window.location.href = item.link;
+          });
+          suggestionsList.appendChild(li);
+        });
+
+        suggestionsList.style.display = "block";
       });
 
-      document.addEventListener('click', function (e) {
-        if (!parentLi.contains(e.target)) {
-          parentLi.classList.remove('active');
+      // Enter để tìm
+      searchBox.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          handleSearch();
         }
       });
-    });
-  </script>
 
-<script>
-  const suggestions = [
-    { name: "Phương pháp", link: "method.html" },
-    { name: "Hồ Tây", link: "hotay.html" },
-    { name: "Hồ Ba Bể", link: "babe.html" },
-    { name: "Hồ Hòa Bình", link: "hoabinh.html" },
-    { name: "Hồ Thác Bà", link: "thacba.html" },
-  ];
+      // Nút tìm kiếm
+      searchButton.addEventListener("click", handleSearch);
 
-  const searchBox = document.getElementById("search-box");
-  const suggestionsList = document.getElementById("suggestions-list");
-  const searchButton = document.getElementById("search-button");
-
-  function handleSearch() {
-    const input = searchBox.value.trim().toLowerCase();
-    const matched = suggestions.find(item => item.name.toLowerCase() === input);
-
-    if (matched) {
-      window.location.href = matched.link;
-    } else {
-      alert("Không tìm thấy kết quả phù hợp.");
-    }
-  }
-
-  searchBox.addEventListener("input", function () {
-    const value = this.value.toLowerCase();
-    suggestionsList.innerHTML = "";
-
-    if (value === "") {
-      suggestionsList.style.display = "none";
-      return;
-    }
-
-    const filtered = suggestions.filter(item =>
-      item.name.toLowerCase().includes(value)
-    );
-
-    if (filtered.length === 0) {
-      suggestionsList.style.display = "none";
-      return;
-    }
-
-    filtered.forEach(item => {
-      const li = document.createElement("li");
-      li.textContent = item.name;
-      li.addEventListener("click", () => {
-        window.location.href = item.link;
+      // Ẩn gợi ý khi click ra ngoài
+      document.addEventListener("click", (e) => {
+        if (!document.querySelector(".search-container").contains(e.target)) {
+          suggestionsList.style.display = "none";
+        }
       });
-      suggestionsList.appendChild(li);
-    });
+    </script>
 
-    suggestionsList.style.display = "block";
-  });
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        padding: 50px 20px;
+        text-align: center;
+      }
 
-  // Enter để tìm
-  searchBox.addEventListener("keypress", function (e) {
-    if (e.key === "Enter") {
-      handleSearch();
-    }
-  });
+      .title {
+        font-size: 28px;
+        font-weight: bold;
+        color: #007b5e;
+        margin: 30px;
+      }
 
-  // Nút tìm kiếm
-  searchButton.addEventListener("click", handleSearch);
+      .image-container img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
 
-  // Ẩn gợi ý khi click ra ngoài
-  document.addEventListener("click", (e) => {
-    if (!document.querySelector(".search-container").contains(e.target)) {
-      suggestionsList.style.display = "none";
-    }
-  });
-</script>
-
-<style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    .title {
-      font-size: 28px;
-      font-weight: bold;
-      color: #007B5E;
-      margin: 30px;
-    }
-
-    .image-container img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    .description {
-      margin-top: 25px;
-      padding: 20px;
-      background-color: #dfd8d88f;
-      border: 3px solid #007B5E;
-      border-radius: 8px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      font-size: 16px;
-      text-align: justify;
-    }
-  </style>
-
-
-</body>
+      .description {
+        margin-top: 25px;
+        padding: 20px;
+        background-color: #dfd8d88f;
+        border: 3px solid #007b5e;
+        border-radius: 8px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 16px;
+        text-align: justify;
+      }
+    </style>
+  </body>
 </html>
